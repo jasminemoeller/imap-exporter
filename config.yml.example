@@ -1,0 +1,15 @@
+# config.yml or imap-accounts.yml
+check_interval: 900  # seconds (15 minutes)
+
+accounts:
+  - name: personal
+    server: imap.ionos.de
+    port: 993
+    username: personal@example.com
+    password: secret123
+    
+  - name: work
+    server: imap.ionos.de
+    port: 993
+    username: work@example.com
+    password: secret456
