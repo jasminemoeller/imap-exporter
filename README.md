@@ -24,7 +24,7 @@ A Prometheus exporter for monitoring IMAP mailbox quota usage across multiple ac
 ### Using Docker
 ```bash
 # Pull the image
-docker pull ghcr.io/yourusername/imap-exporter:latest
+docker pull ghcr.io/jasminemoeller/imap-exporter:latest
 
 # Create a config file
 cat > config.yml << EOF
@@ -43,14 +43,14 @@ docker run -d \
   --name imap-exporter \
   -p 9226:9226 \
   -v $(pwd)/config.yml:/app/config.yml:ro \
-  ghcr.io/yourusername/imap-exporter:latest
+  ghcr.io/jasminemoeller/imap-exporter:latest
 ```
 
 ### Using Docker Compose
 ```yaml
 services:
   imap_exporter:
-    image: ghcr.io/yourusername/imap-exporter:latest
+    image: ghcr.io/jasminemoeller/imap-exporter:latest
     restart: unless-stopped
     ports:
       - "9226:9226"
@@ -111,7 +111,7 @@ You can specify a custom config file location:
 docker run -d \
   -v /path/to/my-config.yml:/etc/imap/config.yml:ro \
   -p 9226:9226 \
-  ghcr.io/yourusername/imap-exporter:latest \
+  ghcr.io/jasminemoeller/imap-exporter:latest \
   --config /etc/imap/config.yml
 ```
 
@@ -182,7 +182,7 @@ Example Grafana panel configurations:
 ```yaml
 services:
   imap_exporter:
-    image: ghcr.io/yourusername/imap-exporter:latest
+    image: ghcr.io/jasminemoeller/imap-exporter:latest
     secrets:
       - imap_config
     command: ["--config", "/run/secrets/imap_config"]
@@ -203,7 +203,7 @@ secrets:
 ## Building from Source
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/imap-exporter.git
+git clone https://github.com/jasminemoeller/imap-exporter.git
 cd imap-exporter
 
 # Build the Docker image
@@ -270,4 +270,4 @@ If you encounter issues or have questions:
 
 ## Changelog
 
-See [Releases](https://github.com/yourusername/imap-exporter/releases) for version history and changes.
+See [Releases](https://github.com/jasminemoeller/imap-exporter/releases) for version history and changes.
